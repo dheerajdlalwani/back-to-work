@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "Back To Work",
+    "version": "0.0.0",
+
+    "description": "Get back to doing what you're supposed to be doing with Back To Work",
+
+    "icons": {
+        "16": "icons/icon-16.png",
+        "32": "icons/icon-32.png",
+        "48": "icons/icon-48.png",
+        "96": "icons/icon-96.png",
+        "128": "icons/icon-128.png"
+    },
+
+    "permissions": [
+        "activeTab"
+    ],
+
+    "browser_action": {
+        "default_icon": "icons/icon-128.png",
+        "default_title": "Back To Work",
+        "default_popup": "src/pop_up/pop_up.html"
+    },
+
+    "content_scripts": [
+        {
+            "js": ["src/script.js"]
+        }
+    ]
+}
