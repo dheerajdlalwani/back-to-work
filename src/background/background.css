@@ -8,56 +8,59 @@
 
 html,
 body {
-  width: 500px;
   font-family: "Manrope", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #e7efff;
   color: #000000;
 }
 
-#popup_header {
+header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  margin: 1em;
+  margin: 5vw;
 }
 
-#popup_header > img {
+header > img {
   margin: 10px;
   filter: drop-shadow(0 0 7px #1f283f);
 }
 
-#header_content {
-  display: flex;
-  flex-direction: column;
-}
-
 #header_content > #main_title {
-  font-size: 7vw;
+  font-size: 45px;
   font-weight: 600;
 }
 
 #header_content > #sub_title {
-  font-size: 5vw;
+  font-size: 25px;
   font-weight: 400;
   font-style: italic;
 }
 
-#mode_button {
-  width: 30vw;
-  margin: 15px;
-  padding: 15px;
-  font-size: 25px;
-  font-weight: 700;
-  color: #1f283f;
-  border: none;
-  border-radius: 10px;
+#list_of_blocked_websites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.random {
-  background-color: #f95050;
-  color: #00d660;
+#list_of_blocked_websites > h3 {
+  font-size: 40px;
+  margin: 0.5em;
+}
+
+#list_of_blocked_websites > ul {
+  font-size: 30px;
+  list-style-type: none;
+}
+
+#list_of_blocked_websites > ul > li {
+  margin: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #afcaff;
+  text-align: center;
+}
+
+#list_of_blocked_websites > ul > li > a {
+  text-decoration: none;
+  color: #000000;
 }

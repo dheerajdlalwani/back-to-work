@@ -6,7 +6,7 @@ console.log("Yo bro. From popup.js");
 chrome.storage.sync.get("mode", ({ mode }) => {
   modeButton.innerHTML = mode;
   if (mode === "Chill") {
-    bgColor = "#50f9e9";
+    bgColor = "#00d660";
     color = "#000000";
   } else {
     bgColor = "#f95050";
@@ -28,7 +28,7 @@ function changeMode() {
       console.log("Mode was 'Chill'. Now setting to 'Work'.");
     } else {
       mode = "Chill";
-      bgColor = "#50f9e9";
+      bgColor = "#00d660";
       color = "#000000";
       console.log("Mode was 'Work'. Now setting to 'Chill'.");
     }
