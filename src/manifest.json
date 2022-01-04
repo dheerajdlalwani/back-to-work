@@ -3,19 +3,23 @@
 
   "description": "Get back to doing what you're supposed to be doing with Back To Work",
 
+  "author": "Dheeraj Lalwani",
+
   "version": "0.0.0",
 
-  "manifest_version": 2,
+  "manifest_version": 3,
 
   "background": {
-    "page": "src/background/background.html",
-    "persistent": true
+    "service_worker": "background.js",
+    "type": "module"
   },
+
+  "options_page": "options/options.html",
 
   "permissions": ["storage", "tabs"],
 
-  "browser_action": {
-    "default_popup": "src/popup/popup.html",
+  "action": {
+    "default_popup": "popup/popup.html",
     "default_icon": {
       "16": "icons/icon-16.png",
       "32": "icons/icon-32.png",

@@ -4,6 +4,7 @@ console.log("Yo bro. From popup.js");
 
 // Initializing button color as per default mode
 chrome.storage.sync.get("mode", ({ mode }) => {
+  console.log("popup.js line 7, mode = ", mode);
   modeButton.innerHTML = mode;
   if (mode === "Chill") {
     bgColor = "#00d660";

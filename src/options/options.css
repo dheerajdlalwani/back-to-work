@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: #e7efff;
+  color: #000000;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 3vw;
+  align-content: space-around;
+}
+
+header > img {
+  margin: 10px;
+  filter: drop-shadow(0 0 7px #1f283f);
+  margin-right: 50px;
+}
+
+#header_content > #main_title {
+  font-size: 45px;
+  font-weight: 600;
+}
+
+#header_content > #sub_title {
+  font-size: 25px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+#list_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#list_container > h3 {
+  font-size: clamp(25px, 3vw, 35px);
+  margin: 0.5em;
+}
+
+#list {
+  font-size: 20px;
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#list > li {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: clamp(500px, 65vw, 900px);
+}
+
+#list > li > a {
+  width: 70%;
+  margin: 15px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #afcaff;
+  color: #000000;
+  outline: none;
+}
+
+#list > li > a:focus,
+#list > li > button:focus {
+  filter: drop-shadow(0 0 7px #006eff);
+}
+
+#empty_message {
+  margin: 1em;
+}
+
+#add_new {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: clamp(500px, 65vw, 900px);
+}
+
+#new_website {
+  border-radius: 10px;
+  width: 70%;
+  margin: 15px;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  text-align: center;
+  filter: drop-shadow(0 0 2px #1f283f);
+}
+
+#new_website:focus {
+  filter: drop-shadow(0 0 7px #006eff);
+}
+
+#add_button {
+  width: 15%;
+  border-radius: 10px;
+  padding: 0.5em;
+  margin: 0.5em;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #000e24;
+  color: #afcaff;
+  filter: drop-shadow(0 0 2px #1f283f);
+  cursor: pointer;
+}
+
+#add_button:focus {
+  filter: drop-shadow(0 0 7px #006eff);
+}
+
+.new_website_field::placeholder {
+  color: rgb(255, 93, 93);
+}
+
+#list_wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+#delete_buttons {
+  list-style-type: none;
+}
+
+.delete_button {
+  width: 15%;
+  border-radius: 10px;
+  padding: 0.5em;
+  margin: 0.5em;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #000e24;
+  color: #afcaff;
+  filter: drop-shadow(0 0 2px #1f283f);
+  cursor: pointer;
+}
