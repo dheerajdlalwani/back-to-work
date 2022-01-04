@@ -1,7 +1,7 @@
 <br />
 
 <p align="center">
-    <img src="./icons/icon.svg"/>
+    <img src="src/icons/icon.svg"/>
 </p>
 
 <h1 align="center">Back to Work</h2>
