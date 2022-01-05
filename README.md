@@ -19,7 +19,7 @@
     Well thats easy to understand. There are 2 modes.
     <ol>
         <li>Work</li>
-        <li>No work</li>
+        <li>Chill</li>
     </ol>
     When you switch to work mode, it asks you to list all the websites that you are addicted to.For example: YouTube, Instagram, Twitter... And it locks you out of those websites.
 </p>
@@ -41,6 +41,13 @@
 <h3>Password Based</h3>
 <p>
     In password based unlocking, you shall be asked to type in an unlocking password which can be set by someone else and can be unlocked by them once you are done with your work.
+</p>
+
+<hr />
+
+<h3>Compatibility</h3>
+<p>
+    Currently, this extension works only on Chrome, Edge and hopefully other Chromium based browsers. But one of the long term goals for this project is to be cross browser compatible. If you wish to help me make them compatible across browsers, feel free to open a <a href="https://github.com/dheerajdlalwani/back-to-work/issues/new">new issue</a> or shoot me an email @ <a href="mailto:lalwanidheeraj1234@gmail.com">lalwanidheeraj1234@gmail.com</a>.
 </p>
 
 <hr />

@@ -45,6 +45,7 @@ header > img {
 }
 
 #list_container > h3 {
+  font-size: 30px;
   font-size: clamp(25px, 3vw, 35px);
   margin: 0.5em;
 }
@@ -63,10 +64,11 @@ header > img {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  width: 75vw;
   width: clamp(500px, 65vw, 900px);
 }
 
-#list > li > a {
+#list > li > span {
   width: 70%;
   margin: 15px;
   padding: 10px 15px;
@@ -78,7 +80,7 @@ header > img {
   outline: none;
 }
 
-#list > li > a:focus,
+#list > li > span:focus,
 #list > li > button:focus {
   filter: drop-shadow(0 0 7px #006eff);
 }
@@ -91,6 +93,7 @@ header > img {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  width: 75vw;
   width: clamp(500px, 65vw, 900px);
 }
 

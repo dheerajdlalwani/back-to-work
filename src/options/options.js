@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let listItems = "";
     // let deleteButtons = "";
     for (let i = 0; i < blockedWebsites.length; i++) {
-      listItems += `<li class="website_list_item"><a href="${blockedWebsites[i]}">${blockedWebsites[i]}</a> <button class="delete_button" id="${i}" value="${i}">Delete</button></li>`;
+      listItems += `<li class="website_list_item"><span tabindex=0>${blockedWebsites[i]}</span> <button class="delete_button" id="${i}" value="${i}">Delete</button></li>`;
     }
     list.innerHTML = listItems;
     let deleteButtons = document.querySelectorAll(".delete_button");
@@ -48,20 +48,14 @@ console.log(addButton);
 addButton.addEventListener("click", () => {
   console.log("Ha bhai click ho gaya...");
   let newWebsite = document.querySelector("#new_website");
-  if (newWebsite.value !== "") {
-    if (isValidURL(newWebsite.value)) {
-      chrome.storage.sync.get("blockedWebsites", ({ blockedWebsites }) => {
-        blockedWebsites.push(newWebsite.value);
-        chrome.storage.sync.set({ blockedWebsites });
-      });
-      location.reload();
-    } else {
-      newWebsite.value = "";
-      newWebsite.placeholder = "Invalid URL!";
-      newWebsite.style.border = "solid rgb(255, 93, 93) 2px";
-      newWebsite.classList.add("new_website_field");
-    }
+  if (newWebsite.value.trim() !== "") {
+    chrome.storage.sync.get("blockedWebsites", ({ blockedWebsites }) => {
+      blockedWebsites.push(newWebsite.value);
+      chrome.storage.sync.set({ blockedWebsites });
+    });
+    location.reload();
   } else {
+    newWebsite.value = "";
     newWebsite.placeholder = "Field is empty!";
     newWebsite.style.border = "solid rgb(255, 93, 93) 2px";
     newWebsite.classList.add("new_website_field");
