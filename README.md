@@ -47,7 +47,12 @@
 
 <h3>Compatibility</h3>
 <p>
-    Currently, this extension works only on Chrome, Edge and hopefully other Chromium based browsers. But one of the long term goals for this project is to be cross browser compatible. If you wish to help me make them compatible across browsers, feel free to open a <a href="https://github.com/dheerajdlalwani/back-to-work/issues/new">new issue</a> or shoot me an email @ <a href="mailto:lalwanidheeraj1234@gmail.com">lalwanidheeraj1234@gmail.com</a>.
+    Currently, this extension works only on Chrome, Edge and hopefully other Chromium based browsers. But one of the long term goals for this project is to be cross browser compatible. If you wish to help me make them compatible across browsers, feel free to open a <a href="https://github.com/dheerajdlalwani/back-to-work/issues/new">new issue</a> or shoot me an email or direct message me at any of my socials 👇🏼
+    <ul>
+        <li><a href="mailto:lalwanidheeraj1234+BackToWork@gmail.com">lalwanidheeraj1234+BackToWork@gmail.com</a></li>
+        <li><a href="https://twitter.com/DhiruCodes">Twitter - DhiruCodes</a></li>
+        <li><a href="https://www.linkedin.com/in/lalwanidheeraj">LinkedIn - lalwanidheeraj</a></li>
+    </ul>
 </p>
 
 <hr />
