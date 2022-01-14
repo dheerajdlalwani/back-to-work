@@ -27,11 +27,58 @@ function changeMode() {
       bgColor = "#f95050";
       color = "#ffffff";
       console.log("Mode was 'Chill'. Now setting to 'Work'.");
+      chrome.storage.sync.get("blockedWebsites", ({ blockedWebsites }) => {
+        console.log("The following websites shall be blocked.");
+        blockedWebsites.forEach((url, index) => {
+          // actually updating the rules.
+          let id = index + 1;
+          chrome.declarativeNetRequest.updateDynamicRules({
+            addRules: [
+              {
+                id: id,
+                priority: 1,
+                action: { type: "block" },
+                condition: {
+                  urlFilter: url,
+                  resourceTypes: [
+                    "main_frame",
+                    "sub_frame",
+                    "xmlhttprequest",
+                    "other",
+                    "script",
+                    "stylesheet",
+                  ],
+                },
+              },
+            ],
+            removeRuleIds: [id],
+          });
+        });
+      });
     } else {
       mode = "Chill";
       bgColor = "#00d660";
       color = "#000000";
       console.log("Mode was 'Work'. Now setting to 'Chill'.");
+      chrome.declarativeNetRequest.getDynamicRules((rules) => {
+        console.log(
+          "Hello, here in popup.js, deleting rules because work mode is turned off."
+        );
+        // deleting rules when mode changed to chill.
+        let rulesToBeDeleted = [];
+        for (let i = 0; i < rules.length; i++) {
+          rulesToBeDeleted.push(rules[i].id);
+        }
+        console.log("Rules to be deleted: " + rulesToBeDeleted);
+        chrome.declarativeNetRequest.updateDynamicRules(
+          {
+            removeRuleIds: rulesToBeDeleted,
+          },
+          () => {
+            console.log("Done deleting 🥰");
+          }
+        );
+      });
     }
     chrome.storage.sync.set({ mode });
     modeButton.innerHTML = mode;

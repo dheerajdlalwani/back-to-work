@@ -55,9 +55,11 @@ body {
   color: #1f283f;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .random {
   background-color: #f95050;
   color: #00d660;
 }
+

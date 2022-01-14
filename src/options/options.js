@@ -1,19 +1,5 @@
 let list = document.querySelector("#list");
-// let deleteButtonsContainer = document.querySelector("#delete_buttons");
 console.log(list);
-// console.log(delete_buttons);
-
-let isValidURL = (testString) => {
-  let url;
-  try {
-    url = new URL(testString);
-  } catch (err) {
-    console.log("Bhai tera to try/catch me hi kat gaya.");
-    console.log(err);
-    return false;
-  }
-  return url.protocol === "http:" || url.protocol === "https:";
-};
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Load ho gaya window.");
@@ -26,23 +12,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     console.log(blockedWebsites);
     let listItems = "";
-    // let deleteButtons = "";
+    // inserting the buttons links & delete buttons on the page.
     for (let i = 0; i < blockedWebsites.length; i++) {
       listItems += `<li class="website_list_item"><span tabindex=0>${blockedWebsites[i]}</span> <button class="delete_button" id="${i}" value="${i}">Delete</button></li>`;
     }
     list.innerHTML = listItems;
     let deleteButtons = document.querySelectorAll(".delete_button");
     for (let j = 0; j < deleteButtons.length; j++) {
+      // implementing the delete website logic
       deleteButtons[j].addEventListener("click", () => {
-        console.log(deleteButtons[j].value);
-        blockedWebsites.splice(deleteButtons[j].value, 1);
-        chrome.storage.sync.set({ blockedWebsites });
-        location.reload();
+        chrome.storage.sync.get("mode", ({ mode }) => {
+          // checking if mode is work.
+          if (mode === "Work") {
+            alert("Cannot delete when in work mode!"); // TODO while refactoring, replace alert with a modal or a message toast.
+          } else {
+            let btnToBeDeleted = deleteButtons[j].value;
+            console.log(btnToBeDeleted);
+            chrome.declarativeNetRequest.getDynamicRules((rules) => {
+              for (let k = 0; k < rules.length; j++) {
+                if (
+                  rules[k].condition.urlFilter ===
+                  blockedWebsites[btnToBeDeleted]
+                ) {
+                  chrome.declarativeNetApi.updateDynamicRules(
+                    {
+                      removeRuleIds: [rules[k].id],
+                    },
+                    () => {
+                      console.log(
+                        "Deleted: " + blockedWebsites[btnToBeDeleted]
+                      );
+                    }
+                  );
+                }
+              }
+            });
+            blockedWebsites.splice(btnToBeDeleted, 1);
+            chrome.storage.sync.set({ blockedWebsites });
+            location.reload();
+          }
+        });
       });
     }
   });
 });
 
+// implementing logic for adding new website.
 let addButton = document.querySelector("#add_button");
 console.log(addButton);
 addButton.addEventListener("click", () => {

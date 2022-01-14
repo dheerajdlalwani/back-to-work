@@ -5,7 +5,7 @@
 
   "author": "Dheeraj Lalwani",
 
-  "version": "0.0.0",
+  "version": "0.0.1",
 
   "manifest_version": 3,
 
@@ -16,7 +16,7 @@
 
   "options_page": "options/options.html",
 
-  "permissions": ["storage", "tabs"],
+  "permissions": ["storage", "tabs", "declarativeNetRequest"],
 
   "action": {
     "default_popup": "popup/popup.html",
