@@ -13,6 +13,49 @@
 
 <br />
 
+<h2>How to install?</h2>
+
+<ol>
+    <li>
+        Clone the repository or download the latest release archive from <a href="https://github.com/dheerajdlalwani/back-to-work/releases/latest" target="_blank" rel="noopener">here</a>.
+    </li>
+    <li>
+        If you are on Google Chrome Browser, open new tab & type: <i>chrome://extensions</i> or if you are on Microsoft Edge Browser, type: <i>edge://extensions</i>.
+    </li>
+    <li>
+        Look for the <strong>Developer mode</strong> toggle & turn it on if it's not already.
+    </li>
+    <li>
+        Here's where to find it in -
+        <ul>
+            <li>Chrome</li>
+            <img src="static/developer_mode_chrome.png">
+            <li>Edge</li>
+            <img src="static/developer_mode_edge.png">
+        </ul>
+    </li>
+    <li>
+        Next, click on <strong>Load unpacked</strong>.
+    </li>
+    <li>
+        Here's where to find it in -
+        <ul>
+            <li>Chrome</li>
+            <img src="static/load_unpacked_chrome.png">
+            <li>Edge</li>
+            <img src="static/load_unpacked_edge.png">
+        </ul>
+    </li>
+    <li>
+        Then navigate to the extracted folder if you downloaded it from the <em>Releases</em> page or to the <strong>src</strong> folder if you have cloned the source code.
+    </li>
+    <li>
+        There you go! Your extension is installed.
+    </li>
+</ol>
+
+<br />
+
 <h2>What does it really do?</h2>
 
 <p>
@@ -60,7 +103,7 @@
 <h3>Contributing</h3>
 
 <ul>
-    <li>The project' is currently in the very initial stages of development. So I am currently not accepting any Pull Requests.</li>
+    <li>The project is currently in the very initial stages of development. So I am currently not accepting any Pull Requests.</li>
     <li>However, contributions in the form of feature requests & bug reports are most welcome. 😊</li>
 </ul>
 
