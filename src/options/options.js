@@ -60,19 +60,39 @@ document.addEventListener("DOMContentLoaded", () => {
 // implementing logic for adding new website.
 let addButton = document.querySelector("#add_button");
 console.log(addButton);
+const domain_dot_tld_regex = /\w+\.[a-zA-B]+/g;
 addButton.addEventListener("click", () => {
   console.log("Ha bhai click ho gaya...");
-  let newWebsite = document.querySelector("#new_website");
-  if (newWebsite.value.trim() !== "") {
-    chrome.storage.sync.get("blockedWebsites", ({ blockedWebsites }) => {
-      blockedWebsites.push(newWebsite.value);
-      chrome.storage.sync.set({ blockedWebsites });
-    });
-    location.reload();
-  } else {
-    newWebsite.value = "";
-    newWebsite.placeholder = "Field is empty!";
-    newWebsite.style.border = "solid rgb(255, 93, 93) 2px";
-    newWebsite.classList.add("new_website_field");
-  }
+  chrome.storage.sync.get("mode", ({ mode }) => {
+    // checking if mode is work.
+    if (mode === "Work") {
+      alert("Cannot add when in work mode!"); // TODO while refactoring, replace alert with a modal or a message toast.
+    } else {
+      let newWebsite = document.querySelector(".new_website");
+      if (newWebsite.value.trim() !== "") {
+        if (domain_dot_tld_regex.test(newWebsite.value)) {
+          chrome.storage.sync.get("blockedWebsites", ({ blockedWebsites }) => {
+            if (blockedWebsites.indexOf(newWebsite.value) === -1) {
+              blockedWebsites.push(newWebsite.value);
+              chrome.storage.sync.set({ blockedWebsites });
+              location.reload();
+            } else {
+              newWebsite.value = "";
+              newWebsite.placeholder = "Website already exists!";
+              newWebsite.classList.add("new_website_field_error");
+            }
+          });
+        } else {
+          newWebsite.value = "";
+          newWebsite.placeholder =
+            "Error. Please enter a valid website domain.";
+          newWebsite.classList.add("new_website_field_error");
+        }
+      } else {
+        newWebsite.value = "";
+        newWebsite.placeholder = "Field is empty!";
+        newWebsite.classList.add("new_website_field_error");
+      }
+    }
+  });
 });

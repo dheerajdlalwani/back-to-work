@@ -38,6 +38,29 @@ header > img {
   font-style: italic;
 }
 
+.new_website {
+  border-radius: 10px;
+  width: 70%;
+  margin: 15px;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  text-align: center;
+  filter: drop-shadow(0 0 2px #1f283f);
+}
+
+.new_website:focus {
+  filter: drop-shadow(0 0 7px #006eff);
+}
+
+.new_website_field_error {
+  border: solid rgb(255, 93, 93) 2px;
+}
+.new_website_field_error::placeholder {
+  color: rgb(255, 93, 93);
+}
+
 #list_container {
   display: flex;
   flex-direction: column;
@@ -97,22 +120,6 @@ header > img {
   width: clamp(500px, 65vw, 900px);
 }
 
-#new_website {
-  border-radius: 10px;
-  width: 70%;
-  margin: 15px;
-  padding: 10px 15px;
-  border: none;
-  outline: none;
-  font-size: 20px;
-  text-align: center;
-  filter: drop-shadow(0 0 2px #1f283f);
-}
-
-#new_website:focus {
-  filter: drop-shadow(0 0 7px #006eff);
-}
-
 #add_button {
   width: 15%;
   border-radius: 10px;
@@ -129,10 +136,6 @@ header > img {
 
 #add_button:focus {
   filter: drop-shadow(0 0 7px #006eff);
-}
-
-.new_website_field::placeholder {
-  color: rgb(255, 93, 93);
 }
 
 #list_wrapper {
@@ -155,8 +158,45 @@ header > img {
   font-size: 20px;
   border: none;
   outline: none;
-  background-color: #000e24;
-  color: #afcaff;
+  background-color: #afcaff;
+  color: #000e24;
   filter: drop-shadow(0 0 2px #1f283f);
   cursor: pointer;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-top: 1em;
+  padding: 1em;
+}
+
+footer a {
+  color: #000e24;
+  font-weight: 700;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
 }

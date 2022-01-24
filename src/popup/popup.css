@@ -12,21 +12,22 @@ body {
   font-family: "Manrope", sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   background-color: #e7efff;
   color: #000000;
 }
 
 #popup_header {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   margin: 1em;
 }
 
 #popup_header > img {
   margin: 10px;
+  width: 75px;
+  height: auto;
   filter: drop-shadow(0 0 7px #1f283f);
 }
 
@@ -36,14 +37,26 @@ body {
 }
 
 #header_content > #main_title {
-  font-size: 7vw;
+  font-size: 6vw;
   font-weight: 600;
 }
 
 #header_content > #sub_title {
-  font-size: 5vw;
+  font-size: 4vw;
   font-weight: 400;
   font-style: italic;
+}
+
+#options_page {
+  margin: 10px;
+  padding: 10px;
+  font-size: 3vw;
+  font-weight: 700;
+  background-color: #000e24;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 #mode_button {
@@ -52,14 +65,52 @@ body {
   padding: 15px;
   font-size: 25px;
   font-weight: 700;
+  background-color: #e7efff;
   color: #1f283f;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
+  align-self: center;
 }
 
-.random {
-  background-color: #f95050;
-  color: #00d660;
+.chill_mode_background {
+  background: rgb(110, 231, 183);
+  background: radial-gradient(
+    circle,
+    rgba(110, 231, 183, 1) 0%,
+    rgba(52, 211, 153, 1) 25%,
+    rgba(16, 185, 129, 1) 50%,
+    rgba(5, 150, 105, 1) 100%
+  );
+  color: #000000;
+}
+.work_mode_background {
+  background: rgb(248, 113, 113);
+  background: radial-gradient(
+    circle,
+    rgba(248, 113, 113, 1) 0%,
+    rgba(248, 113, 113, 1) 25%,
+    rgba(239, 68, 68, 1) 75%,
+    rgba(239, 68, 68, 1) 100%
+  );
 }
 
+#quote_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  text-align: center;
+  background-color: #000e24;
+  color: #e7efff;
+  border-radius: 15px 15px 0 0;
+}
+
+.quote {
+  padding: 1em;
+}
+
+.author {
+  font-weight: 700;
+}
