@@ -11,6 +11,7 @@ In no event shall the author of this Software be liable for any special, consequ
 | Version | Supported |
 | :-----: | :-------: |
 |  0.0.1  |    ✅     |
+|  0.0.2  |    ✅     |
 
 ## Reporting a Vulnerability
 
